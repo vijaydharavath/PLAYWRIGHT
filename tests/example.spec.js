@@ -61,7 +61,7 @@ test('login page  test ',async ({page }) => {
     await page.fill("//input[@placeholder='Username']","Admin"); 
 
 await page.waitForSelector("//input[@placeholder='Password']",({timeout : 10000}));
-await page.fill("//input[@placeholder='Password']","admin1231");
+await page.fill("//input[@placeholder='Password']","admin123");
 
 await page.waitForTimeout(2000);
 
