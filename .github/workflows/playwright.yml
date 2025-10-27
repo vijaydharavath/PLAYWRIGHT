@@ -25,8 +25,12 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
-      - name: Run Playwright tests
-        run: npx playwright test --reporter=html
+      - name: Run Playwright tests (headless mode)
+        run: npx playwright test --reporter=html --config playwright.config.js
+        env:
+          CI: true
+          # Force headless mode
+          HEADLESS: true
 
       - name: Upload HTML report as artifact
         uses: actions/upload-artifact@v4

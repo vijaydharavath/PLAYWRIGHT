@@ -4,9 +4,9 @@ const { defineConfig, devices } = require('@playwright/test');
 module.exports = defineConfig({
   testDir: './', // your test folder
   timeout: 30000,
-  retries: 2,
+  // retries: 2,
   use: {
-    headless: false, // show browser UI
+    headless: true, // show browser UI
     screenshot: 'off',
     video: 'off',
   },
