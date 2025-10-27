@@ -61,7 +61,7 @@ test('login page  test ',async ({page }) => {
     await page.fill("//input[@placeholder='Username']","Admin"); 
 
 await page.waitForSelector("//input[@placeholder='Password']",({timeout : 10000}));
-await page.fill("//input[@placeholder='Password']","admin123");
+await page.fill("//input[@placeholder='Password']","admin12");
 
 await page.waitForTimeout(2000);
 
@@ -71,7 +71,7 @@ await page.click("//button[normalize-space()='Login']")
    await page.waitForTimeout(2000); 
    await expect(page).toHaveURL("https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index");
    await page.waitForTimeout(2000);
-   
+
    await page.waitForSelector("(//p[@class='oxd-userdropdown-name'])[1]",({timeout:1000}));
     await page.click("(//p[@class='oxd-userdropdown-name'])[1]")
     await page.waitForSelector("//a[normalize-space()='Logout']",({timeout :1000}))
