@@ -13,8 +13,11 @@ test("log in failed test",async ({page})=>{
 await page.waitForSelector("//input[@placeholder='Password']",({timeout : 10000}));
 await page.fill("//input[@placeholder='Password']","admin1");
 
+await page.waitForTimeout(2000);
+
 await page.waitForSelector("//button[normalize-space()='Login']",({timeout:10000}));
 await page.click("//button[normalize-space()='Login']")
+await page.waitForTimeout(2000);
 
 const errorMessage = await page.waitForSelector("(//p[@class='oxd-text oxd-text--p oxd-alert-content-text'])[1]",({timeout:10000}))
 await expect(errorMessage).toBeTruthy()
